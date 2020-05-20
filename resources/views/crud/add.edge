@@ -1,0 +1,27 @@
+@layout('layout.base')
+    @section('content')
+    <!-- Default form login -->
+    <div style="width:50%;float:center;">
+        @if(old('message'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+           {{ old('message') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+        </div>
+        @endif  
+    <form class="text-center border border-light p-5" action="/person/add" method="POST">
+        {{ csrfField() }}
+        <p class="h4 mb-4">Add Person</p>
+        <!-- Email -->
+        <input type="text" id="name" name="name" class="form-control mb-4" placeholder="Name:">
+        <input type="text" id="lastname" name="lastname" class="form-control mb-4" placeholder="Lastname">
+        <input type="email" id="email" name="email" class="form-control mb-4" placeholder="E-mail">
+
+
+    <!-- Sign in button -->
+    <button class="btn btn-info btn-block my-4" type="submit">Add</button>
+    </form>
+    </div>
+<!-- Default form login -->
+    @endsection

@@ -1,0 +1,10 @@
+@layout('layout.base')
+    @section('content')
+    <ul>
+        @each(people in people)
+            <li>
+                {{ people.name }}
+            </li>
+        @endeach
+    </ul>
+    @endsection
